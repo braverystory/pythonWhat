@@ -2,7 +2,7 @@
 # การสร้าง python module
 
 ## Requirements
-`$ pip install setuptools twine`
+`$ pip install setuptools wheel  twine`
 
 
 ## โครงสร้างอย่างง่ายของโปรเจค
@@ -59,8 +59,28 @@ Option `bdist_wheel` จะทำการตรวจสอบว่าเป�
 bdist_wheel will detect that the code is not pure Python, and build a wheel that’s named such that it’s only usable on the platform that it was built on
 
 
-## Reference
-https://docs.python.org/3/distributing/index.html
-https://packaging.python.org/distributing/
+## การติดตั้ง package จาก .whl
 
+```
+pip install SomePackage-1.0-py2.py3-none-any.whl
+```
+
+
+==============================
+
+# การ Upload python module ขึ้น pypi
+
+## Requirements
+`$ pip install twine`
+
+ขึ้นตอน
+
+https://packaging.python.org/distributing/#uploading-your-project-to-pypi
+
+==============================
+
+## Reference
+1. https://docs.python.org/3/distributing/index.html
+1. https://packaging.python.org/distributing/
+1. https://pip.pypa.io/en/latest/user_guide/#installing-from-wheels
 

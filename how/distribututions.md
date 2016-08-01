@@ -4,21 +4,35 @@
 ## Requirements
 `$ pip install setuptools wheel  twine`
 
-
 ## โครงสร้างอย่างง่ายของโปรเจค
 
+│   .gitigrore
+│   README.rst
+│   setup.cfg
+│   setup.py
+├───module01
+│       bar.py
+│       foo.py
+│       __init__.py
+├───module02
+│       bar.py
+│       foo.py
+│       __init__.py
+└───venv_gitbash_package
+    │   ...
+  ...
 
 
 ### สามารถดูการเขียน setup.py ได้ที่ 
 [Click](https://packaging.python.org/distributing/)
 
 
-## การแจกจ่า distributetion source code (sdist): unbuilt package
+## การแจกจ่ายซอดโค๊ด **distributetion source code (sdist):** unbuilt package
 สร้าง tar หรือ zip เพื่อแจกจ่าย source code ซึ่งยังไม่ได้ถูก Built
 `$ python setup.py sdist`
 
-## การแจกจ่าย Wheels: built package(.whl)
-wheels file สามารถใช้ติดตั้งโดยที่ไม่จำเป็นจะต้องผ่านกระบวนการ build ใดๆอีกแบ่งออกเป็น 3 ประเภทดังนี้
+## การแจกจ่าย Wheels file: built package(.whl)
+wheels file สามารถใช้ติดตั้งโดยที่ไม่ต้องผ่านกระบวนการ build ใดๆอีก แบ่งออกเป็น 3 ประเภทดังนี้
 
 1.**Pure Python Wheels**
 
@@ -54,7 +68,7 @@ python setup.py bdist_wheel
 ```
 
 Note:
-Option `bdist_wheel` จะทำการตรวจสอบว่าเป็น pure python หรือไม่และสร้างไฟล์ wheel ออกมาให้เหมาะสมออกมาให้เอง
+อ๊อปชัน `bdist_wheel` จะทำการตรวจสอบว่าเป็น pure python หรือไม่และสร้างไฟล์ wheel ออกมาให้เหมาะสมออกมาให้เอง
 
 bdist_wheel will detect that the code is not pure Python, and build a wheel that’s named such that it’s only usable on the platform that it was built on
 
@@ -64,7 +78,6 @@ bdist_wheel will detect that the code is not pure Python, and build a wheel that
 ```
 pip install SomePackage-1.0-py2.py3-none-any.whl
 ```
-
 
 ==============================
 

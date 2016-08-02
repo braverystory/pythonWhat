@@ -12,6 +12,7 @@ $ pip install twine
 
 ## โครงสร้างอย่างง่ายของโปรเจค
 
+```
 <distributetions>
 │   setup.cfg
 │   setup.py
@@ -26,7 +27,7 @@ $ pip install twine
 └───venv_gitbash_package
     │   ...
   ...
-
+```
 
 ==============================
 
@@ -94,13 +95,13 @@ main']
 `$ python setup.py sdist`
 
 ## การแจกจ่าย Wheels file: built package(.whl)
-wheels file สามารถใช้ติดตั้งโดยที่ไม่ต้องผ่านกระบวนการ build ใดๆอีก แบ่งออกเป็น 3 ประเภทดังนี้
+Wheels file สามารถใช้ติดตั้งโดยที่ไม่ต้องผ่านกระบวนการ build ใดๆอีก แบ่งออกเป็น 3 ประเภทดังนี้
 
 1.**Pure Python Wheels**
 
 คือ package ที่ไม่มีไฟล์ที่ถูกคอมไพล์เป็นส่วนประกอบอยู่ และ source code ไม้ได้เขียนให้ support python 2 และ 3 พร้อมกัน
 
-contains no compiled extensions, but don’t natively support both Python 2 and 3.
+Contains no compiled extensions, but don’t natively support both Python 2 and 3.
 
 ```
 #To build 
@@ -111,7 +112,7 @@ python setup.py bdist_wheel
 
 คือ package ที่ไม่มีไฟล์ที่ถูกคอมไพล์เป็นส่วนประกอบอยู่ และ source code เขียนให้ support python 2 และ 3 พร้อมกัน
 
-are pure python support Python 2 and 3. This is a wheel that can be installed anywhere by pip.
+Are pure python support Python 2 and 3. This is a wheel that can be installed anywhere by pip.
 
 ```
 #To build 
@@ -122,17 +123,16 @@ python setup.py bdist_wheel --universal
 
 คือ package ที่มีการรวมเอาไฟล์สำหรับ os ใดๆเข้าไปด้วย ทำให้ไฟล์ .whl ที่ได้จะสามารถใช้ได้แค่กับ platform นั้นๆเท่านั้น
 
-are wheels that are specific to a certain platform like linux, OSX, or Windows, usually due to containing compiled extensions.
+Are wheels that are specific to a certain platform like linux, OSX, or Windows, usually due to containing compiled extensions.
 
 ```
 #To build 
 python setup.py bdist_wheel
 ```
 
-Note:
-อ๊อปชัน `bdist_wheel` จะทำการตรวจสอบว่าเป็น pure python หรือไม่และสร้างไฟล์ wheel ออกมาให้เหมาะสมออกมาให้เอง
+**อ๊อปชัน `bdist_wheel` จะทำการตรวจสอบว่าเป็น pure python หรือไม่และสร้างไฟล์ wheel ออกมาให้เหมาะสมออกมาให้เอง**
 
-bdist_wheel will detect that the code is not pure Python, and build a wheel that’s named such that it’s only usable on the platform that it was built on
+**bdist_wheel will detect that the code is not pure Python, and build a wheel that’s named such that it’s only usable on the platform that it was built on**
 
 
 ## การติดตั้ง package จาก .whl
@@ -148,7 +148,7 @@ pip install SomePackage-1.0-py2.py3-none-any.whl
 ## Requirements
 `$ pip install twine`
 
-ขึ้นตอน
+ขึ้นตอนสามารถดูได้จาก
 
 https://packaging.python.org/distributing/#uploading-your-project-to-pypi
 

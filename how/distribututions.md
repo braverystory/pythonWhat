@@ -34,13 +34,13 @@ $ pip install twine
 Tutorial
 
 ```
-$
-cd distributetions
-source venv_gitbash_package/Scripts/activate
-python setup.py bdist_wheel
-pip install --upgrade dist/distSample-2016.8.1-py3-none-any.whl
-pip list
-python
+$ cd distributetions
+$ virtualenv venv_gitbash_package
+$ source venv_gitbash_package/Scripts/activate
+$ python setup.py bdist_wheel
+$ pip install --upgrade dist/distSample-2016.8.1-py3-none-any.whl
+$ pip list
+$ python
 >>> 
 >>> import module01 as m1
 >>> dir(m1)
@@ -80,7 +80,6 @@ main']
 >>> bar.printstr('xyz')			# still plug with m1
 1 bar: xyz
 >>>
-
 ```
 
 

@@ -88,6 +88,8 @@ main']
 ### สามารถดูการเขียน setup.py ได้ที่ 
 [Click](https://packaging.python.org/distributing/)
 
+## การติดตั้ง package ลงใน python environment ปัจจุบัน 
+`$ python setup.py install`
 
 ## การแจกจ่ายซอดโค๊ด **distributetion source code (sdist):** unbuilt package
 สร้าง tar หรือ zip เพื่อแจกจ่าย source code ซึ่งยังไม่ได้ถูก Built

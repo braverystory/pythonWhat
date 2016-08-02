@@ -1,7 +1,5 @@
+# list of export module when using: `from [this package name] import *`
 __all__ = ['foo']
-
-#import bar
-#import foo
 
 def main():
     """Entry point for the application script"""

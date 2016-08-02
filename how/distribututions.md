@@ -2,12 +2,17 @@
 # การสร้าง python module
 
 ## Requirements
-`$ pip install setuptools wheel  twine`
+```
+# Default package@ python 3.5.2
+$ pip install setuptools wheel 
+# Needed when what to push to pip
+$ pip install twine
+```
+
 
 ## โครงสร้างอย่างง่ายของโปรเจค
 
-│   .gitigrore
-│   README.rst
+<distributetions>
 │   setup.cfg
 │   setup.py
 ├───module01
@@ -22,6 +27,63 @@
     │   ...
   ...
 
+
+==============================
+
+Tutorial
+
+```
+$
+cd distributetions
+source venv_gitbash_package/Scripts/activate
+python setup.py bdist_wheel
+pip install --upgrade dist/distSample-2016.8.1-py3-none-any.whl
+pip list
+python
+>>> 
+>>> import module01 as m1
+>>> dir(m1)
+['__all__', '__builtins__', '__cached__', '__doc__', '__file__', '__loader__', '__name__', '__package__', '__path__', '__spec__', 'main']
+>>> m1.main()
+1...Calling main application...
+>>>
+>>> import module02 as m2
+>>> dir(m2)
+['__all__', '__builtins__', '__cached__', '__doc__', '__file__', '__loader__', '__name__', '__package__', '__path__', '__spec__', 'main']
+>>> m2.main()
+2...Calling main application...
+>>>
+>>> from module01 import *
+Hello from foo
+Hello from bar
+>>> dir(m1)
+['__all__', '__builtins__', '__cached__', '__doc__', '__file__', '__loader__', '__name__', '__package__', '__path__', '__spec__', 'bar', 'foo', 'main']
+>>> m1.foo.printstr('abc')
+1 foo: abc
+>>> m1.bar.printstr('abc')
+1 bar: abc
+>>> foo.printstr('abc')
+1 foo: abc
+>>> bar.printstr('abc')
+1 bar: abc
+>>>
+>>> from module02 import *		# foo will from m1 to m2
+Hello from foo
+>>> dir(m2)
+['__all__', '__builtins__', '__cached__', '__doc__', '__file__', '__loader__', '__name__', '__package__', '__path__', '__spec__', 'foo', '
+main']
+>>> m2.foo.printstr('xyz')
+2 foo: xyz
+>>> foo.printstr('xyz')			# plug with m2
+2 foo: xyz
+>>> bar.printstr('xyz')			# still plug with m1
+1 bar: xyz
+>>>
+
+```
+
+
+==============================
 
 ### สามารถดูการเขียน setup.py ได้ที่ 
 [Click](https://packaging.python.org/distributing/)
